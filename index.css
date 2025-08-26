@@ -12,6 +12,7 @@
     --secondary-color:#8bec23;
     --tertiary-color: #a998eb;
     font-family: "Pixelify Sans";
+    color: var(--text-color);
 }
 
 body {
@@ -28,12 +29,10 @@ body {
 .heading span {
 
     font-optical-sizing: auto;
-    color: var(--text-color);
     font-size: 74px;
     text-shadow:  +2px 0px 0px var(--tertiary-color), -5px 0px 0px var(--primary-color);
 }
 .blink {
-    color: var(--text-color);
     animation: 1s blink step-end infinite;
 }
 
@@ -68,6 +67,7 @@ body {
 }
 
 .news-card-content {
+    color: black;
     text-align: center;
 }
 
@@ -110,13 +110,12 @@ main nav ul {
     font-size: 24px;
 }
 main nav span {
-    color: var(--text-color);
     font-size: 52px;
     text-shadow:  +1px 0px 0px var(--tertiary-color), -2px 0px 0px var(--primary-color);
 }
 
-nav a {
-    color: var(--text-color);
+a {
+    color:var(--text-color);
 }
 
 main nav .img-cont {
@@ -132,7 +131,6 @@ main nav img {
     border: 3px solid var(--tertiary-color);
 
     text-shadow: -1px 1px 0px black;
-    color: white;
 }
 
 #rotating_pig {
@@ -172,7 +170,6 @@ main nav img {
 
 .contacts a {
     font-size: 24px;
-    color: var(--text-color);
 }
 
 
