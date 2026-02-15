@@ -11,13 +11,35 @@
     --primary-color: #f88241; /* #FF953D;*/
     --secondary-color:#8bec23;
     --tertiary-color: #a998eb;
+    --vp-h1: 5vw;
+    --vp-h2: calc(var(--vp-h1) / 2);
+    --vp-text: 1vw;
     font-family: "Pixelify Sans";
     color: var(--text-color);
+    font-size: var(--vp-text);
+
+    & h1 {
+        font-size: var(--vp-h1);
+    }
+    & h2 {
+        font-size: var(--vp-h2);
+    }
+}
+
+@media screen and (orientation: portrait){
+    :root {
+        --vp-h1: 4.5vh;
+        --vp-h2: calc(var(--vp-h1) / 2);
+        --vp-text: 2vh;
+    }
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-    max-width: 100%;
-    overflow-x: hidden;
     background-color: var(--background-color);
     background-image: url("wp.jpg");
     background-repeat: repeat-y;
@@ -27,11 +49,17 @@ body {
 main {
     background-color: #101010FF;
     border: 5px solid var(--primary-color);
-    padding: 10px;
+    padding: 1vw;
     margin: auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     width: 800px;
+}
+
+@media screen and (orientation: portrait){
+    main {
+        width: 95%;
+    }
 }
 
 main > header {
@@ -40,11 +68,12 @@ main > header {
 }
 
 main > header span,h1 {
+    font-size: var(--vp-h1);
     font-optical-sizing: auto;
-    font-size: 74px;
     text-shadow:  +2px 0px 0px var(--tertiary-color), -5px 0px 0px var(--primary-color);
     display: inline;
 }
+
 .blink {
     animation: 1s blink step-end infinite;
 }
@@ -64,7 +93,12 @@ main > header span,h1 {
     position: relative;
     top: -50px;
     left: 85%;
+}
 
+@media screen and (orientation: portrait) {
+    .news-card-container {
+       display: none;
+    }
 }
 
 .news-card {
@@ -84,15 +118,20 @@ main > header span,h1 {
     text-align: center;
 }
 
-
-.outline {
-    border-top: 3px solid var(--secondary-color);
-    padding: 30px 10px;
-
+.static2flex {
+    display: grid;
 }
 
-.gridbox {
-    display: grid;
+@media screen and ((orientation: portrait) or (max-width: 800px)){
+    .static2flex{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#content {
+    border-top: 3px solid var(--secondary-color);
+    padding: 30px 10px;
     grid-template-columns: 1fr 2fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
@@ -110,10 +149,9 @@ main nav {
 
 main nav ul {
     text-align: left;
-    font-size: 24px;
+    font-size: calc(var(--vp-text)*1.5);
 }
 main nav > h2 {
-    font-size: 52px;
     margin: 0;
     margin-top: 1ex;
     text-shadow:  +1px 0px 0px var(--tertiary-color), -2px 0px 0px var(--primary-color);
@@ -180,7 +218,6 @@ main nav img {
 
 .minecraft-img {
     grid-area: 3 / 1 / 5 / 3;
-    display: grid;
     grid-template-columns: 5fr 2fr;
     border: 3px dashed var(--secondary-color);
 }
