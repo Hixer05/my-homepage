@@ -16,9 +16,12 @@
 }
 
 body {
+    max-width: 100%;
+    overflow-x: hidden;
     background-color: var(--background-color);
     background-image: url("wp.jpg");
-    background-size: contain;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
 }
 
 .heading {
@@ -27,7 +30,6 @@ body {
 }
 
 .heading span {
-
     font-optical-sizing: auto;
     font-size: 74px;
     text-shadow:  +2px 0px 0px var(--tertiary-color), -5px 0px 0px var(--primary-color);
