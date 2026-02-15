@@ -181,7 +181,11 @@ main nav img {
     z-index: -1;
     animation: roam_x 10s normal  infinite linear,
                roam_y 1s alternate infinite cubic-bezier(0.36,0,0.63,1); /* cubic-bezier(0.36,1,0.63,0);*/
-    animation-timing-function:
+}
+@media screen and (orientation: portrait) {
+    #rotating_pig {
+        display: none;
+    }
 }
 
 @keyframes "roam_x" {
