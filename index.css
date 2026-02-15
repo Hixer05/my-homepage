@@ -24,15 +24,26 @@ body {
     background-attachment: fixed;
 }
 
-.heading {
+main {
+    background-color: #101010FF;
+    border: 5px solid var(--primary-color);
+    padding: 10px;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 800px;
+}
+
+main > header {
     margin:auto;
     margin-left: 11px;
 }
 
-.heading span {
+main > header span,h1 {
     font-optical-sizing: auto;
     font-size: 74px;
     text-shadow:  +2px 0px 0px var(--tertiary-color), -5px 0px 0px var(--primary-color);
+    display: inline;
 }
 .blink {
     animation: 1s blink step-end infinite;
@@ -73,16 +84,6 @@ body {
     text-align: center;
 }
 
-main {
-    background-color: #101010FF;
-    border: 5px solid var(--primary-color);
-    padding: 10px;
-    margin: auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    width: 800px;
-    /* height: 1420px; */
-}
 
 .outline {
     border-top: 3px solid var(--secondary-color);
@@ -104,15 +105,17 @@ main nav {
     border: 2px dashed var(--primary-color);
     display: flex;
     flex-direction: column;
-    align-items:center;
-    /* justify-content:center; */
+    align-items: center;
 }
+
 main nav ul {
     text-align: left;
     font-size: 24px;
 }
-main nav span {
+main nav > h2 {
     font-size: 52px;
+    margin: 0;
+    margin-top: 1ex;
     text-shadow:  +1px 0px 0px var(--tertiary-color), -2px 0px 0px var(--primary-color);
 }
 
